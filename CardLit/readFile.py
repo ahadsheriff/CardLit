@@ -57,7 +57,13 @@ def createSet(set, cards):
     return set
 
 
+
 def readFile(filename):
+    """
+    Hello World
+    :param filename:
+    :return:
+    """
     cards = []
     f = open(filename)
     for line in f:
