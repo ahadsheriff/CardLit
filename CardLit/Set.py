@@ -19,11 +19,13 @@ class Set():
         return self.name
 
     def toString(self):
-        return "Name: " + self.name + "\n" + "Box1: " + self.boxes[0].toString() + "\n" + "Box2: " + self.boxes[1].toString() + "\n" + "Box3: " + self.boxes[2].toString()
+        return "Name: " + self.name + "\n" + "Box1: " + self.boxes[0].toString() + "\n" + "Box2: " + \
+               self.boxes[1].toString() + "\n" + "Box3: " + self.boxes[2].toString()
 
 
 def main():
     test = Set("Test")
     print(test.toString())
 
-main()
+if __name__ == "__main__":
+    main()

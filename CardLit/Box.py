@@ -35,7 +35,7 @@ class Box():
 
     def toString(self):
 
-        string = "Proficiency Level: " + str(self.proficiency_level) + ", Cards: ["
+        string = "Proficiency Level: " + str(self.proficiency_level) + ", Cards: \n["
 
         for i in range(len(self.cards)):
             card = self.cards[i]
@@ -58,3 +58,5 @@ def main():
     print(box1.toString())
     print(card1.toString())
 
+if __name__ == "__main__":
+    main()

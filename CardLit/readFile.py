@@ -4,22 +4,71 @@
     Description: Read a test text file to test algorithm for CardLit.
 """
 
-import Set.py as set
+from Set import *
+from Box import *
+from Card import *
+
+
+def clearBox(set, boxIndex):
+    if boxIndex == 0:
+        for card in set.boxes[0].cards:
+            if card.correct:
+                set.boxes[1].add(card)
+                set.boxes[0].cards.remove(card)
+    elif boxIndex == 1:
+        for card in set.boxes[1].cards:
+            if card.correct:
+                set.boxes[2].add(card)
+                set.boxes[1].cards.remove(card)
+            else:
+                set.boxes[0].add(card)
+                set.boxes[1].cards.remove(card)
+    elif boxIndex == 2:
+        for card in set.boxes[2].cards:
+            if not card.correct:
+                set.boxes[0].add(card)
+                set.boxes[2].cards.remove(card)
+
+
+def readBox(set, boxIndex):
+    for card in set.boxes[boxIndex].cards:
+        print(card.toString())
+        input1 = input("Correct or Incorrect(y or n): ")
+        if input1 == "y":
+            card.correct = True
+        elif input1 == "n":
+            card.correct = False
+    clearBox(set, boxIndex)
+
+
+def createSet(set, cards):
+    for card in cards:
+        set.boxes[0].add(card)
+    return set
 
 
 def readFile(filename):
-    lineParts = []
+    cards = []
     f = open(filename)
     for line in f:
-        lineParts += line.split(",")
+        lineParts = line.split(",")
         for part in lineParts:
-            part = part.strip()
-        # Add card objects based on input
+            part.strip("\n\r")
+        card = Card(lineParts[0], lineParts[1])
+        cards.append(card)
+        lineParts.clear()
     f.close()
+    return cards
 
 
 def main():
-    readFile("testingAlgorithm.txt")
+    cardArray = readFile("testingAlgorithm.txt")
+    set1 = Set("TestSet")
+    set1 = createSet(set1, cardArray)
+    readBox(set1, 0)
+    print(set1.toString())
+    readBox(set1, 1)
+    print(set1.toString())
 
 if __name__ == "__main__":
     main()
