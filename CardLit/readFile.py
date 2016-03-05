@@ -10,24 +10,34 @@ from Card import *
 
 
 def clearBox(set, boxIndex):
+    removeList = []
     if boxIndex == 0:
         for card in set.boxes[0].cards:
             if card.correct:
                 set.boxes[1].add(card)
-                set.boxes[0].cards.remove(card)
+                removeList.append(card)
+        for card in removeList:
+            set.boxes[0].cards.remove(card)
+        removeList.clear()
     elif boxIndex == 1:
         for card in set.boxes[1].cards:
             if card.correct:
                 set.boxes[2].add(card)
-                set.boxes[1].cards.remove(card)
+                removeList.append(card)
             else:
                 set.boxes[0].add(card)
-                set.boxes[1].cards.remove(card)
+                removeList.append(card)
+        for card in removeList:
+            set.boxes[1].cards.remove(card)
+        removeList.clear()
     elif boxIndex == 2:
         for card in set.boxes[2].cards:
             if not card.correct:
                 set.boxes[0].add(card)
-                set.boxes[2].cards.remove(card)
+                removeList.append(card)
+        for card in removeList:
+            set.boxes[2].cards.remove(card)
+        removeList.clear()
 
 
 def readBox(set, boxIndex):
