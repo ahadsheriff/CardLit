@@ -57,7 +57,6 @@ def createSet(set, cards):
     return set
 
 
-
 def readFile(filename):
     """
     Hello World
