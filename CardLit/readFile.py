@@ -49,6 +49,9 @@ def readBox(set, boxIndex):
         elif input1 == "n":
             card.correct = False
     clearBox(set, boxIndex)
+    set.boxes[0].shuffle()
+    set.boxes[1].shuffle()
+    set.boxes[2].shuffle()
 
 
 def createSet(set, cards):
