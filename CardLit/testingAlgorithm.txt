@@ -1,6 +1,33 @@
-5 x 7 = ?, 35
-3 x 8 = ?, 24
+5 * 7 = ?, 35
+3 * 8 = ?, 24
 1 + 9 = ?, 10
 2 / 4 = ?, 0.5 or 1/2
-5 x 10 = ?, 50
-
+5 * 10 = ?, 50
+3 * 12 = ?, 36
+2 * 8 = ?, 16
+36 / 3 = ?, 12
+42 / 7 = ?, 6
+9 - 4 = ?, 5
+10 - 3 = ?, 7
+8 - 3 = ?, 5
+17 - 2 = ?, 15
+8 + 3 = ?, 11
+19 + 2 = ?, 21
+10 + 9 = ?, 19
+4 - 2 = ?, 2
+99 / 33 = ?, 3
+15 * 3 = ?, 45
+5 + 6 = ?, 11
+What is the color of the sky?, Blue.
+What college/University do you go to?, Rochester Institute of Technology.
+Are caffeine pills bad for you?, Yes.
+Why does Ahad keep looking at me?, No one ever knows.
+Why does Ahad have a purple pencil?, They ran out of blue ones.
+Where did the pizza at BrickHack2 come from?, Salvatore's
+What is the only material RIT uses for construction?, Brick
+Where do the snakes hide?, The tall grass.
+How many Calories are in a blue powerrade?, 130
+iOS or Android?, Android all the way.
+Why is there tape on the cables on the ground?, So people don't destroy them when they're stepped on.
+Why are cliff bars so good?, They have gains.
+Did Ahad forget to lock his computer before?, Yes

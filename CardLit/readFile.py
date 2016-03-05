@@ -11,9 +11,10 @@ def readFile(filename):
     lineParts = []
     f = open(filename)
     for line in f:
-        line = line.strip()
         lineParts += line.split(",")
-        """Add card objects based on input"""
+        for part in lineParts:
+            part = part.strip()
+        # Add card objects based on input
     f.close()
 
 
