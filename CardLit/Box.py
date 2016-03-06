@@ -39,7 +39,7 @@ class Box():
 
         for i in range(len(self.cards)):
             card = self.cards[i]
-            string += " " + "(" + str(card.question) + "," + str(card.answer) + ")"
+            string += " " + "(" + str(card.question) + "," + str(card.answer) + ")\n"
 
         string += " ]"
         return string

@@ -69,9 +69,8 @@ def readFile(filename):
     cards = []
     f = open(filename)
     for line in f:
-        lineParts = line.split(",")
-        for part in lineParts:
-            part.strip("\n\r")
+        lineParts = line.strip()
+        lineParts = lineParts.split(",")
         card = Card(lineParts[0], lineParts[1])
         cards.append(card)
         lineParts.clear()
@@ -83,10 +82,10 @@ def main():
     cardArray = readFile("testingAlgorithm.txt")
     set1 = Set("TestSet")
     set1 = createSet(set1, cardArray)
-    readBox(set1, 0)
+    #readBox(set1, 0)
     print(set1.toString())
-    readBox(set1, 1)
-    print(set1.toString())
+    #readBox(set1, 1)
+    #print(set1.toString())
 
 if __name__ == "__main__":
     main()
