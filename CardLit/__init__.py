@@ -3,6 +3,8 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.migrate import Migrate, MigrateCommand
 from flask.ext.script import Manager
 import datetime
+import json
+import urllib2
 
 
 
@@ -19,8 +21,19 @@ from CardLit.models import *
 
 @app.route("/")
 def hello():
-    return render_template("index.html")
+    theUrl = 'https://api.quizlet.com/2.0/sets/415?access_token=MRkuAe39ZXmNdTtQ7RZEfjufbRCNjcJTjMaWscRC&whitespace=1'
 
+    json_obj = urllib2.urlopen(theUrl)
+
+    data = json.load(json_obj)
+
+    for item in data["terms"]:
+        term = item["term"]
+        definition = item["definition"]
+        print(term)
+
+    return render_template("index.html")
+    
 
 
 """

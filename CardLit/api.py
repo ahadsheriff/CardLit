@@ -13,8 +13,8 @@ redirect = 'http://localhost:5000/'
 
 #theUrl = 'https://api.quizlet.com/2.0/search/sets?access_token=KMbMUAWmeAkNPuaJzJDcaaxv7gyWZFtxtQBtGbGz&whitespace=1&q=spanish&term=silla'
 
-"""
-theUrl = 'https://api.quizlet.com/2.0/sets/415?access_token=FypuwDbfnu9WRWQtWAewSCzhEvZfKW2FyAVafCck&whitespace=1'
+
+theUrl = 'https://api.quizlet.com/2.0/sets/415?access_token=TFnwtwKc5swA7HKM7KzpbneGvSZVGt32MmZuCAwb&whitespace=1'
 
 json_obj = urllib2.urlopen(theUrl)
 
@@ -26,14 +26,15 @@ for item in data["terms"]:
 	definition = item["definition"]
 	print term
 	print definition
+
+
 """
-
-
 def search(query):
 	api_key = clientID
 	quiz = Quizlet(api_key)
 	access_token = quiz.request_token(api_key, redirect, secretKey)
 	finalTheUrl = 'https://api.quizlet.com/2.0/search/sets?access_token=' + access_token + '&whitespace=1&q=' + query
+	print(finalTheUrl)
 
 	json_obj = urllib2.urlopen(finalTheUrl)
 
@@ -137,3 +138,5 @@ class Quizlet():
 
 if __name__ == "__main__":
     search("spanish")
+
+"""
