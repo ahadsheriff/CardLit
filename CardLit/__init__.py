@@ -19,44 +19,22 @@ from CardLit.models import *
 def hello():
     return render_template("index.html")
 
-
-@app.route('/projects/create/', methods=['GET', 'POST'])
+@app.route("/projects/create/", methods=['GET', 'POST'])
 def create():
     if request.method == "GET":
-        return render_template('create.html')
-
+        return render_template("create.html")
     if request.method == "POST":
-        #Handle the form submission
 
-        now = datetime.datetime.now()
-        time_end = request.form.get("funding_end_date")
-        time_end = datetime.datetime.strptime(time_end, "%Y-%m-%d")
 
-        new_project = Project(
-            member_id = 1, #Guest Creator
-            name = request.form.get("project_name"),
-            short_description = request.form.get("short_description"),
-            long_description = request.form.get("long_description"),
-            goal_amount = request.form.get("funding_goal"),
-            time_start = now,
-            time_end = time_end,
-            time_created = now
+        new_Card = Card(
+            question="Q1",
+            answer="A1",
+            correct=False,
+
         )
 
-        db.session.add(new_project)
+        db.session.add(new_Card)
         db.session.commit()
 
-        return redirect(url_for('create'))  
-
-
-
-
-
-
-
-
-
-
-
-
+        return redirect(url_for('create'))
 
