@@ -4,6 +4,8 @@ from flask.ext.migrate import Migrate, MigrateCommand
 from flask.ext.script import Manager
 import datetime
 
+
+
 app = Flask(__name__)
 app.config.from_object('CardLit.default_settings')
 manager = Manager(app)
@@ -19,6 +21,9 @@ from CardLit.models import *
 def hello():
     return render_template("index.html")
 
+
+
+"""
 @app.route("/projects/create/", methods=['GET', 'POST'])
 def create():
     if request.method == "GET":
@@ -37,4 +42,6 @@ def create():
         db.session.commit()
 
         return redirect(url_for('create'))
+"""
+
 
