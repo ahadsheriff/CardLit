@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Search Box Example 2 - default placeholder text gets cleared on click</title>
+<meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
+<!-- JAVASCRIPT to clear search text when the field is clicked -->
+<script type="text/javascript">
+window.onload = function(){
+	//Get submit button
+	var submitbutton = document.getElementById("tfq");
+	//Add listener to submit button
+	if(submitbutton.addEventListener){
+		submitbutton.addEventListener("click", function() {
+			if (submitbutton.value == 'Search our website'){//Customize this text string to whatever you want
+				submitbutton.value = '';
+			}
+		});
+	}
+}
+</script>
+<!-- CSS styles for standard search box with placeholder text-->
+<style type="text/css">
+  body{
+    background-color: #f35b5d;
+  }
+
+
+	#tfnewsearch{
+    margin-left: 42%;
+
+
+		padding:20px;
+
+	}
+	.tftextinput2{
+		margin: 0;
+		padding: 5px 15px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size:14px;
+		color:#666;
+		border:1px solid #0076a3; border-right:0px;
+		border-top-left-radius: 5px 5px;
+		border-bottom-left-radius: 5px 5px;
+	}
+	.tfbutton2 {
+		margin: 0;
+		padding: 5px 7px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size:14px;
+		font-weight:bold;
+		outline: none;
+		cursor: pointer;
+		text-align: center;
+		text-decoration: none;
+		color: #f35b5d;
+		border: solid 1px #0076a3; border-right:0px;
+		background: #0095cd;
+		background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff));
+		background: -moz-linear-gradient(top,  #ffffff,  #ffffff);
+		border-top-right-radius: 5px 5px;
+		border-bottom-right-radius: 5px 5px;
+	}
+	.tfbutton2:hover {
+		text-decoration: none;
+		background: #007ead;
+		background: -webkit-gradient(linear, left top, left bottom, from(#ffffff  ), to(#ffffff));
+		background: -moz-linear-gradient(top,  #ffffff,  #ffffff);
+	}
+	/* Fixes submit button height problem in Firefox */
+	.tfbutton2::-moz-focus-inner {
+	  border: 0;
+	}
+	.tfclear{
+		clear:both;
+	}
+  .boxed {
+  border: 4px solid white ;
+  font-family: Arial;
+  color: white;
+  margin-bottom: 5%;
+  margin-left: 3vh;
+  margin-right: 3vh;
+  font-size: 36px;
+  height:20vh;
+  vertical-align: middle;
+  line-height: 20vh;
+padding-left: 4%;
+}
+</style>
+</head>
+<body>
+	<!-- HTML for SEARCH BAR -->
+	<div id="tfheader">
+		<form id="tfnewsearch" method="get" action="http://www.google.com">
+		        <input type="text" id="tfq" class="tftextinput2" name="q" size="21" maxlength="120" value="search for a quizlet deck"><input type="submit" value=">" class="tfbutton2">
+		</form>
+		<div class="tfclear"></div>
+	</div>
+  <div class="boxed">
+  Existing Decks will go here.
+</div>
+
+</body>
+</html>
